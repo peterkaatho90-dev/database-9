@@ -1,0 +1,56 @@
+MYSQL DATABASE BACKUP ASSIGNMENT
+
+QUESTION 1: CREATING A COMPLETE DATABASE BACKUP
+
+Command:
+mysqldump -u root -p sales > sales_backup.sql
+
+Explanation:
+- mysqldump: MySQL utility used to export or back up a database.
+- -u root: specifies root as the MySQL username.
+- -p: prompts the user to enter the MySQL password.
+- sales: specifies the database to back up.
+- >: redirects the backup output to a file.
+- sales_backup.sql: specifies the name of the backup file.
+
+When the command is executed, MySQL prompts for the database password:
+Enter password:
+
+The backup is saved in the file named sales_backup.sql.
+
+Why regular database backups are important:
+Regular database backups protect data from accidental deletion, hardware failure, software problems, database corruption, cyberattacks, and other unexpected events. A backup allows the database administrator to restore the database and reduce data loss and downtime.
+
+
+QUESTION 2: BACKING UP ALL DATABASES
+
+Command:
+mysqldump -u root -p --all-databases > all_databases_backup.sql
+
+Explanation:
+- mysqldump: MySQL utility used to export or back up databases.
+- -u root: uses root as the MySQL username.
+- -p: prompts the user to enter the MySQL password.
+- --all-databases: exports all databases available on the MySQL server.
+- >: redirects the backup output to a file.
+- all_databases_backup.sql: specifies the name of the backup file.
+
+When the command is executed, MySQL prompts for the database password:
+Enter password:
+
+The complete backup is saved in the file named all_databases_backup.sql.
+
+Why backing up all databases is important before migration:
+Backing up all databases before migrating to another server ensures that all database information is preserved. This includes the sales database and other databases hosted on the server. If something goes wrong during migration, the backup can be used to restore the databases on the new server.
+
+
+FINAL ANSWERS
+
+Question 1:
+mysqldump -u root -p sales > sales_backup.sql
+
+Question 2:
+mysqldump -u root -p --all-databases > all_databases_backup.sql
+
+Note:
+These are commands for the operating system's Command Prompt or Terminal, not SQL statements entered inside the MySQL mysql> prompt.
